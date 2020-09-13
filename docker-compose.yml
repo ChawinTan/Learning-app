@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  sql:
+    image: mysql
+    restart: always
+    environment: 
+      MYSQL_DATABASE: 'db'
+      # MYSQL_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    # volumes is where data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
